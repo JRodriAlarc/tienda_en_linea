@@ -3,7 +3,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require_once '../vendor/autoload.php'; // Ruta al archivo autoload.php de PHPMailer
+require_once '../utils/phpMailer/autoload.php'; // Ruta al archivo autoload.php de PHPMailer
 require_once 'configs.php';
 
 $mail = new PHPMailer(true);
