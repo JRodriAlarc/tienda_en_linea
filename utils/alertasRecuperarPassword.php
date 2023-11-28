@@ -8,7 +8,12 @@ $messages = [
     'token_not_updated' => 'No se pudo actualizar el token. Intente nuevamente.',
     'password_corto' => 'La contraseña es demasiado corta (Al menos de 8 caracteres).',
     'campos_vacios' => 'Algunos campos están vacíos.',
-    'invalid_email' => 'Verifique el formato de su Correo Electrónico'
+    'invalid_email' => 'Verifique el formato de su Correo Electrónico',
+    'tel' => 'El formato del teléfono es incorrecto',
+    'error_tel' => 'Verifique sus Datos. No se encontró ningún usuario con ese telefono',
+    'bad_sms' => 'El SMS no pudo ser enviado. Error en Nuestro Servidor, Intentelo más tarde',
+    'invalid_code' => 'El Código de Verificación es Incorrecto',
+    'code_unknown' => 'No hay código de verificación en la Sesión'
 ];
 
 // Función para mostrar mensajes de error

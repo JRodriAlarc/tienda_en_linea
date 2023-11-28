@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $token = $_POST['token']; // Obtiene el token desde la URL
     } else {
         // Manejar la ausencia del parámetro 'token' en la URL
-        header("Location: ../view/reestablecerPassword.php?token=$token&error=unknown_token");
+        header("Location: ../view/restablecerPassword.php?token=$token&error=unknown_token");
         exit();
     }
     
@@ -28,17 +28,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 exit();
             } else {
                 #echo 'Las contraseñas no coinciden';
-                header("Location: ../view/reestablecerPassword.php?token=$token&error=bad_pass");
+                header("Location: ../view/restablecerPassword.php?token=$token&error=bad_pass");
                 exit();
             }
         } else {
             // La contraseña es demasiado corta (menos de 8 caracteres)
-            header("Location: ../view/reestablecerPassword.php?token=$token&error=password_corto");
+            header("Location: ../view/restablecerPassword.php?token=$token&error=password_corto");
             exit();
         }
     } else {
         // Algunos campos están vacíos
-        header("Location: ../view/reestablecerPassword.php?token=$token&error=campos_vacios");
+        header("Location: ../view/restablecerPassword.php?token=$token&error=campos_vacios");
         exit();
     }
 }

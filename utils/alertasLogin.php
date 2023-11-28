@@ -5,7 +5,8 @@ $messages = [
     'ok' => 'El correo ha sido enviado. Por favor, revisa tu correo electrónico.',
     'error' => "El correo no pudo ser enviado. Error en Nuestro Servidor, Intentelo más tarde.",
     'send_mail' => 'Por favor, revisa tu email. El correo ya ha sido enviado.',
-    'new_pass' => 'Contraseña restablecida con éxito. Por favor, inicie sesión.'
+    'new_pass' => 'Contraseña restablecida con éxito. Por favor, inicie sesión.',
+    'send_code' => 'Mensaje Enviado, Ingrese el código de Verificación'
 ];
 
 if (isset($_GET['error']) && isset($messages[$_GET['error']])) {
