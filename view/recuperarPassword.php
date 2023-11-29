@@ -18,7 +18,7 @@ require_once('../utils/conSesionActiva.php');
     </form>
     
     <h2>Recuperar Contraseña usando SMS</h2>
-    <form action="../controller/procesarCodigoSMS.php" method="post">
+    <form action="../controller/procesarRecuperacionSMS.php" method="post">
         <input type="tel" name="telefono" placeholder="Número de teléfono" required><br>
         <select name="pais" id="pais" required>
             <option value="">Elige tu País</option>

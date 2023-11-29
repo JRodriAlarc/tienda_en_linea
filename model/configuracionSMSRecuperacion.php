@@ -22,7 +22,7 @@ try{
     $mensaje = new SmsTextualMessage(
         destinations: [$destinatario],
         from: "compraYa",
-        text: 'Este es el codigo para Reestablecer su Password: **'.$codigoVerificacion.'**'
+        text: 'Este es el codigo para Reestablecer su Password: '.$codigoVerificacion
         
     );
     $request = new SmsAdvancedTextualRequest(messages: [$mensaje]);

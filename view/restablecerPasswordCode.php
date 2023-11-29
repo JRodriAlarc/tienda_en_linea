@@ -13,7 +13,7 @@ include_once('../utils/alertasRecuperarPassword.php');
 <body>
 
     <h2>Recuperar Contraseña usando SMS</h2>
-    <form action="../controller/procesarNuevoPasswordPhone.php" method="post" id="verificationForm">
+    <form action="../controller/validarCodigoVerificacion.php" method="post" id="verificationForm">
         <div id="verificationCode" name="verificationCode">
             <input type="text" maxlength="1" pattern="\d" inputmode="numeric" name="digit1" id="digit1" required>
             <input type="text" maxlength="1" pattern="\d" inputmode="numeric" name="digit2" id="digit2" required>

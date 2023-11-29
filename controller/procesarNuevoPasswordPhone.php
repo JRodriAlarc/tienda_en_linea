@@ -1,27 +1,48 @@
 <?php
 session_start();
 
-// Verifica si existe el código de verificación en la sesión
-if (!isset($_SESSION['codigo_verificacion'])) {
-    #echo "No hay código de verificación en la sesión";
-    header("Location: ../view/recuperarPassword.php?message=code_unknown"); // Redirige si no hay código almacenado
-    exit();
-}
+require_once('../model/conexionBD.php');
+require_once('actualizarPasswordSMS.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $codigoIngresado = $_POST['digit1'] . $_POST['digit2'] . $_POST['digit3'] . $_POST['digit4'] . $_POST['digit5'] . $_POST['digit6'];
-
-    #echo $codigoIngresado;
-
-    // Compara el código ingresado con el almacenado en la sesión
-    if ($codigoIngresado === $_SESSION['codigo_verificacion']) {
-        echo "El código es correcto, redirige a la página para restablecer la contraseña";
-        #header("Location: ../view/restablecerPassword.php");
-        #exit();
+    if(isset($_POST['codigoVerificacion'])) {
+        $codigo = $_POST['codigoVerificacion']; // Obtiene el Codigo de verificación
+        $telefonoRecuperacion = $_POST['phone'];
     } else {
-        #echo "El código de verificación es incorrecto";
-        header("Location: ../view/restablecerPasswordCode.php?message=invalid_code");
+        // Manejar la ausencia del parámetro 'CodigoVerificacion'
+        header("Location: ../view/restablecerPasswordPhone.php?error=code_null");
         exit();
     }
+
+    $newPassword = $_POST['password'];
+    $confirmPassword = $_POST['confirm_password'];
+
+    // Validar los campos del formulario
+    if (!empty($newPassword) || !empty($confirmPassword)) {
+        if (strlen($newPassword) >= 8) {
+            if ($newPassword === $confirmPassword) {
+                // Actualiza la contraseña en la base de datos asociada al Codigo de verificación
+                $cambiarPassword = new actualizarPasswordConSMS($conexion);
+                $cambiarPassword->actualizarPasswordConSMS($telefonoRecuperacion, $newPassword);
+        
+                // Redirigir al usuario a la página de inicio.
+                header("Location: ../index.php?message=new_pass");
+                exit();
+            } else {
+                // Las contraseñas no coinciden
+                header("Location: ../view/restablecerPasswordPhone.php?message=bad_pass");
+                exit();
+            }
+        } else {
+            // La contraseña es demasiado corta (menos de 8 caracteres)
+            header("Location: ../view/restablecerPasswordPhone.php?error=password_corto");
+            exit();
+        }
+    } else {
+        // Algunos campos están vacíos
+        header("Location: ../view/restablecerPasswordPhone.php?error=campos_vacios");
+        exit();
+    }
+
 }
 ?>

@@ -35,6 +35,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             // Almacena el código en una sesión para verificarlo en la siguiente etapa
             session_start();
             $_SESSION['codigo_verificacion'] = $codigoVerificacion;
+            $_SESSION['telefonoUsuario'] = $telefono;
             
             // Si se guardo el código con éxito Enviar el mensaje de Verificación
             // Envia el SMS al usuario con el codigo de verificación

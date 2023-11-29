@@ -2,7 +2,7 @@
 require_once '../model/conexionBD.php';
 require_once '../model/comprobarEmailRestablecerPassword.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
     if(isset($_POST['token'])) {
         $token = $_POST['token']; // Obtiene el token desde la URL
     } else {

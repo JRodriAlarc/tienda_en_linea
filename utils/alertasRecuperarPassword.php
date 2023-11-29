@@ -13,7 +13,8 @@ $messages = [
     'error_tel' => 'Verifique sus Datos. No se encontró ningún usuario con ese telefono',
     'bad_sms' => 'El SMS no pudo ser enviado. Error en Nuestro Servidor, Intentelo más tarde',
     'invalid_code' => 'El Código de Verificación es Incorrecto',
-    'code_unknown' => 'No hay código de verificación en la Sesión'
+    'code_unknown' => 'No hay código de verificación en la Sesión',
+    'code_null' => 'El código para recuperar su contraseña ha Expirado'
 ];
 
 // Función para mostrar mensajes de error

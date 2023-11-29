@@ -22,7 +22,7 @@ try {
     $mail->addAddress($email, $usuario['nombre']);
     $mail->Subject = 'Cambia tu Password';
     $mail->isHTML(true);
-    $mail->Body = 'Haz clic en este enlace para restablecer tu Password: <a href="http://localhost/borrador/view/reestablecerPassword.php?token=' . $token . '">Restablecer Password</a>';
+    $mail->Body = 'Haz clic en este enlace para restablecer tu Password: <a href="http://localhost/borrador/view/restablecerPassword.php?token=' . $token . '">Restablecer Password</a>';
     
     $mail->send();
     #echo 'El correo ha sido enviado';
