@@ -2,6 +2,7 @@
 require_once('../utils/sinSesionActiva.php');
 require_once('../utils/obtenerDatosSesion.php');
 require_once('../utils/validarRolUser.php');
+require_once('../controller/obtenerProductos.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +17,19 @@ require_once('../utils/validarRolUser.php');
     <form action="../controller/cerrarSesion.php" method="POST">
         <input type="submit" value="Cerrar Sesión">
     </form>
+
+    <br>
+
+    <h2>Productos</h2>
+    <div class="productos">
+        <?php foreach ($productos as $producto): ?>
+            <div class="producto">
+                <h2><?php echo $producto['nombre']; ?></h2>
+                <p><?php echo $producto['descripcion']; ?></p>
+                <p>Precio: <?php echo $producto['precioPorUnidad']; ?></p>
+            </div>
+        <?php endforeach; ?>
+    </div>
 
 </body>
 </html>
