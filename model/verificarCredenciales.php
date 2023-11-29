@@ -8,7 +8,7 @@ class verificarCredenciales {
     }
 
     public function verificarCredenciales($username, $password) {
-        $query = "SELECT nif, correoElectronico, login, userPassword FROM usuario WHERE login = ? OR correoElectronico = ?";
+        $query = "SELECT nif, correoElectronico, login, userPassword, rol FROM usuario WHERE login = ? OR correoElectronico = ?";
         $stmt = $this->conexion->prepare($query);
         $stmt->bind_param("ss", $username, $username);
         $stmt->execute();

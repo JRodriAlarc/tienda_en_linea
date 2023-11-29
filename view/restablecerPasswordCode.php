@@ -1,6 +1,7 @@
 <?php
 include_once('../utils/alertasLogin.php');
 include_once('../utils/alertasRecuperarPassword.php');
+require_once('../utils/conSesionActiva.php');
 ?>
 <!DOCTYPE html>
 <html lang="es">

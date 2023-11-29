@@ -1,6 +1,7 @@
 <?php
 require_once('../utils/sinSesionActiva.php');
 require_once('../utils/obtenerDatosSesion.php');
+require_once('../utils/validarRolUser.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

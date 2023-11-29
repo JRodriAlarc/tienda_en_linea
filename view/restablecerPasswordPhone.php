@@ -1,6 +1,7 @@
 <?php
 include_once('../utils/alertasRecuperarPassword.php');
-session_start();
+require_once('../utils/conSesionActiva.php');
+#session_start();
 ?>
 <!DOCTYPE html>
 <html lang="es">

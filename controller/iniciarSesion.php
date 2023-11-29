@@ -17,11 +17,19 @@ class iniciarSesion {
             $_SESSION['usuarioId'] = $usuario['nif'];
             $_SESSION['usuarioEmail'] = $usuario['correoElectronico'];
             $_SESSION['usuarioLogin'] = $usuario['login'];
+            $_SESSION['usuarioRol'] = $usuario['rol'];
             #print_r($usuario);
             
-            // Redirigir a la página de inicio después del inicio de sesión exitoso
-            header("Location: ../view/home.php");
-            exit();
+            // Validar el rol del usuario
+            if ($_SESSION['usuarioRol'] == 'admin'){
+                header("Location: ../view/admin/homeAdmin.php"); // Redirigir al área de Administración si es Admin
+                exit();
+            } else{
+                // Redirigir a la página de inicio después del inicio de sesión exitoso
+                header("Location: ../view/home.php");
+                exit();
+            }
+            
         } else {
             // Redirigir de vuelta a la página de inicio de sesión con un mensaje de error
             header("Location: ../index.php?error=1");
