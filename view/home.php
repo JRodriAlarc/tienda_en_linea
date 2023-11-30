@@ -1,8 +1,9 @@
 <?php
-require_once('../utils/sinSesionActiva.php');
-require_once('../utils/obtenerDatosSesion.php');
-require_once('../utils/validarRolUser.php');
-require_once('../controller/obtenerProductos.php');
+require_once '../utils/sinSesionActiva.php';
+require_once '../utils/obtenerDatosSesion.php';
+require_once '../utils/validarRolUser.php';
+require_once '../controller/obtenerProductos.php';
+require_once '../controller/obtenerSecciones.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,16 +19,25 @@ require_once('../controller/obtenerProductos.php');
         <input type="submit" value="Cerrar Sesión">
     </form>
 
-    <br>
+    <hr>
+
+    <h2>Categorías</h2>
+    <ul>
+        <?php foreach ($categorias as $categoria): ?>
+            <li><?php echo $categoria['nombre']; ?></li>
+        <?php endforeach; ?>
+    </ul>
+
+    <hr>
 
     <h2>Productos</h2>
     <div class="productos">
         <?php foreach ($productos as $producto): ?>
             <div class="producto">
-                <h2><?php echo $producto['nombre']; ?></h2>
+                <h3><?php echo $producto['nombre']; ?></h3>
                 <p><?php echo $producto['descripcion']; ?></p>
                 <p>Precio: <?php echo $producto['precioPorUnidad']; ?></p>
-            </div>
+            </div><br>
         <?php endforeach; ?>
     </div>
 
