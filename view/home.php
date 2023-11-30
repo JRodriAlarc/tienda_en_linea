@@ -2,8 +2,9 @@
 require_once '../utils/sinSesionActiva.php';
 require_once '../utils/obtenerDatosSesion.php';
 require_once '../utils/validarRolUser.php';
-require_once '../controller/obtenerProductos.php';
-require_once '../controller/obtenerSecciones.php';
+#require_once '../controller/obtenerProductos.php';
+#require_once '../controller/obtenerSecciones.php';
+require_once '../controller/filtrarProductosPorSeccion.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,27 +20,40 @@ require_once '../controller/obtenerSecciones.php';
         <input type="submit" value="Cerrar Sesión">
     </form>
 
-    <hr>
-
-    <h2>Categorías</h2>
-    <ul>
-        <?php foreach ($categorias as $categoria): ?>
-            <li><?php echo $categoria['nombre']; ?></li>
-        <?php endforeach; ?>
-    </ul>
-
-    <hr>
-
-    <h2>Productos</h2>
-    <div class="productos">
-        <?php foreach ($productos as $producto): ?>
-            <div class="producto">
-                <h3><?php echo $producto['nombre']; ?></h3>
-                <p><?php echo $producto['descripcion']; ?></p>
-                <p>Precio: <?php echo $producto['precioPorUnidad']; ?></p>
-            </div><br>
-        <?php endforeach; ?>
+    <div>
+        <h2>Secciones</h2>
+        <ul>
+            <li><a href="home.php">Todo</a></li>
+        </ul>
+        <?php
+        if ($resultadoSecciones->num_rows > 0) {
+            echo '<ul>';
+            while ($row = $resultadoSecciones->fetch_assoc()) {
+                echo '<li><a href="home.php?seccion=' . $row['codigoSeccion'] . '">' . $row['nombre'] . '</a></li>';
+            }
+            echo '</ul>';
+        } else {
+            echo "No hay secciones disponibles.";
+        }
+        ?>
     </div>
 
+    <div>
+        <h2>Productos</h2>
+        <?php
+        if ($resultadoProductos->num_rows > 0) {
+            while ($row = $resultadoProductos->fetch_assoc()) {
+                echo '<div>';
+                echo '<h3>' . $row['nombre'] . '</h3>';
+                echo '<p>' . $row['descripcion'] . '</p>';
+                echo '<p>Precio: ' . $row['precioPorUnidad'] . '</p>';
+                echo '</div>';
+            }
+        } else {
+            echo "No hay productos disponibles en esta sección.";
+        }
+        ?>
+    </div>
+    
 </body>
 </html>
