@@ -73,6 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['usuarioId'] = $nif;
             $_SESSION['usuarioEmail'] = $correoElectronico;
             $_SESSION['usuarioLogin'] = $login;
+            $_SESSION['usuarioRol'] = $rol;
 
             // Redirigir al usuario a la página de inicio o donde desees después del registro
             header("Location: ../view/home.php");

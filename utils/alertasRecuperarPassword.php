@@ -17,6 +17,7 @@ $messages = [
     'code_null' => 'El código para recuperar su contraseña ha Expirado'
 ];
 
+/*
 // Función para mostrar mensajes de error
 function mostrarError($error) {
     global $messages;
@@ -33,5 +34,34 @@ if (isset($_GET['message'])) {
 if (isset($_GET['error'])) {
     mostrarError($_GET['error']);
 }
+*/
+
+// Función para mostrar mensajes de error
+function mostrarError($error) {
+    global $messages;
+    if (isset($messages[$error])) {
+        echo "<div id='errorDiv' style='position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #ffe5e5; color: #ff0000; padding: 20px; border-radius: 15px; border: 1px solid #ff0000; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); z-index: 9999;'>
+            <span onclick='cerrarAlerta()' style='cursor: pointer; position: absolute; top: 5px; right: 10px; font-weight: bold;'>x</span>
+            {$messages[$error]}
+        </div>";
+    }
+}
+
+// Mostrar los mensajes de error según los parámetros recibidos
+if (isset($_GET['message'])) {
+    mostrarError($_GET['message']);
+}
+
+if (isset($_GET['error'])) {
+    mostrarError($_GET['error']);
+}
+
+echo "<script>
+    function cerrarAlerta() {
+        const errorDiv = document.getElementById('errorDiv');
+        errorDiv.style.display = 'none';
+    }
+</script>";
+
 
 ?>
