@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Roboto:wght@400;500;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+  background: linear-gradient(to right, #fc540c, #ff9232);
+}
+
+/* Estilos para el encabezado */
+header {
+  background-color: #000;
+  padding: 20px 0;
+  color: white;
+}
+
+.contenedor{
+  margin: auto;
+}
+
+.header-contenedor {
+  text-align: center;
+  color: #fff;
+}
+
+.header-contenedor h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.header-contenedor h2 {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.text-center{
+  text-align: center;
+}
+
+/* Estilos para el botón */
+.buttons{
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  margin-bottom: 20px;
+}
+
+button, i{
+  font-size: 28px;
+  margin-left: 5px;
+}
+
+.buttons a{
+  text-decoration: none;
+}
+
+button {
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all .2s;
+  padding: 8px 12px;
+  border-radius: 100px;
+  background: linear-gradient(to left, #a0e360, #74d519 );
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  transform: 5s;
+  text-decoration: none;
+  border: none;
+  width: 15vw;
+  justify-content: center;
+}
+
+.btn-cancel{
+  background: linear-gradient(to left,#ff1515, #db0404);
+}
+
+.btn-cancel:hover{
+  background: linear-gradient(to left, #e60101, #ff4848);
+}
+
+button > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform .3s ease-in-out;
+}
+
+button:hover svg {
+  transform: translateX(5px);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Estilos para la sección del historial de compras */
+.py-5 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  border-radius: 1em;
+  padding: 25px;
+  width: 80vw;
+}
+
+.card-container {
+  background-color: #ffe0e6;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.card-img {
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.card-content {
+  flex: 1;
+}
+
+.card-content h5 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card-content p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card-content small {
+  font-size: 0.875rem;
+  color: #666;
+}

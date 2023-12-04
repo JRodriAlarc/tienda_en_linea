@@ -6,6 +6,9 @@ session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['productoId'])) {
     $productoId = $_POST['productoId'];
     $cantidad = $_POST['cantidad'];
+    $productoNombre = $_POST['productoNombre'];
+    $productoPrecio = $_POST['productoPrecio'];
+    $productoImagen = $_POST['productoImagen'];
 
     // Verificar si existe un carrito para el usuario actual en la sesión
     if (!isset($_SESSION['carrito'])) {
@@ -13,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['productoId'])) {
     }
 
     // Insertar el producto en la tabla 'detallecarrito'
-    $_SESSION['carrito'][] = ['productoId' => $productoId, 'cantidad' => $cantidad];
+    $_SESSION['carrito'][] = ['productoId' => $productoId, 'cantidad' => $cantidad, 'productoNombre' => $productoNombre, 'productoPrecio' => $productoPrecio, 'productoImagen' => $productoImagen];
 
     // Insertar el producto en la tabla detallecarrito (adaptar a tu lógica de BD)
     $fechaCreacion = date('Y-m-d'); // Obtener la fecha actual

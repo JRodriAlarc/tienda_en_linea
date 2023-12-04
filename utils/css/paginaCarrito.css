@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Roboto:wght@400;500;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+  background: linear-gradient(to right, #fc540c, #ff9232);
+}
+
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 15px 20px;
+  text-align: center;
+}
+
+.productos-carrito{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3em;
+}
+
+.container{
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  background-color: white;
+  border-radius: 1em;
+  padding: 25px;
+  width: 80vw;
+}
+
+.card-img-bottom {
+  width: 20%;
+}
+
+.card-img,
+.card-img-top {
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+}
+
+/* Estilos para la lista de productos en el carrito */
+.form {
+  list-style: none;
+  padding: 0;
+}
+  
+.form li {
+  background-color: #f8f8f8;
+  box-shadow: 0 5px 10px rgba(255, 255, 255, 0.7);
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 1em;
+}
+
+li b {
+  justify-content: space-between;
+}
+
+/* Estilos para los botones en cada elemento del carrito */
+.form form {
+  display: inline;
+  margin-right: 5px;
+}
+
+.form input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.resumen-products{
+  text-align: right;
+  padding-right: 1.5em;
+  padding-top: 1em;
+}
+
+.vaciar-carrito{
+  background-color: #ff9232;
+  color: white;
+  border-radius: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-right: 3em;
+  padding-left: 3em;
+  border: none;
+  font-weight: bold;
+}
+
+
+/* Estilos para el botón */
+.buttons{
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  margin-bottom: 20px;
+}
+
+button, i{
+  font-size: 28px;
+  margin-left: 5px;
+}
+
+.buttons a{
+  text-decoration: none;
+}
+
+.buttons button {
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all .2s;
+  padding: 0.7em 12px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  text-decoration: none;
+  border: none;
+  width: 40vw;
+  justify-content: center;
+}
+
+.btn-cancel{
+  background: linear-gradient(to left,#ff1515, #db0404);
+}
+
+.btn-cancel:hover{
+  background: linear-gradient(to left, #e60101, #ff4848);
+}
+
+button > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform .3s ease-in-out;
+}
+
+button:hover svg {
+  transform: translateX(5px);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+li .productos-carrito{
+  justify-content: space-evenly;
+  margin: 0.3em !important;
+}
+
+.btn-drop{
+  background-color: #db0404;
+  color: white;
+  border: none;
+  border-radius: 2em;
+  padding: 1em, 0em;
+  width: 70px;
+  font-size: 8px;
+}
+
+#paypal-button-container{
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

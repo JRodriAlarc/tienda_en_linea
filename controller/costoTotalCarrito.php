@@ -16,5 +16,5 @@ foreach ($_SESSION['carrito'] as $producto) {
     }
 }
 
-echo "Costo total del carrito: $" . number_format($totalCost, 2); // Muestra el costo total formateado
+echo "<b>Costo total del carrito:</b> $" . number_format($totalCost, 2); // Muestra el costo total formateado
 ?>
